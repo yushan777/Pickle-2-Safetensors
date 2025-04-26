@@ -6,7 +6,8 @@ Installation & Dependencies
 git clone https://github.com/yushan777/Pth-2-Safetensors.git
 cd Pth-2-Safetensors
 
-# create virtual env (not absolutely necessary but it's best practice so you don't interfere with any system-wide dependencies)
+# create virtual env (not absolutely necessary but it's best practice
+# so you don't interfere with any system-wide dependencies)
 python -m venv venv
 
 # activate venv
