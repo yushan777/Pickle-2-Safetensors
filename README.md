@@ -1,5 +1,5 @@
 # Pth-2-Safetensors
-Convert PyTorch model to safetensors
+A script to convert PyTorch model to Safetensors format.
 
 Dependencies
 ```bash
