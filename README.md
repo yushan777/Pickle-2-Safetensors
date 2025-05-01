@@ -8,7 +8,7 @@ cd Pickle-2-Safetensors
 
 # Create virtual env (not absolutely necessary but it's best practice
 # so you don't interfere with any system-wide dependencies)
-python -m venv venv
+python3 -m venv venv
 
 # Activate venv
 # For Linux, macOS  
