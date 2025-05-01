@@ -3,8 +3,8 @@ A script to convert PyTorch model (.pth, .pt, ckpt) to safetensors format.
 
 Installation
 ```bash
-git clone https://github.com/yushan777/Pth-2-Safetensors.git
-cd Pth-2-Safetensors
+git clone https://github.com/yushan777/Pickle-2-Safetensors.git
+cd Pickle-2-Safetensors
 
 # Create virtual env (not absolutely necessary but it's best practice
 # so you don't interfere with any system-wide dependencies)
