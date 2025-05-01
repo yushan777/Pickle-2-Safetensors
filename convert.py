@@ -6,7 +6,7 @@ import argparse
 # ====================================
 def parse_args():
     parser = argparse.ArgumentParser(description="Convert PyTorch model to safetensors with precision control")
-    parser.add_argument("--input_model", type=str, required=True, help="Path to input PyTorch model (.pth)")
+    parser.add_argument("--input_model", type=str, required=True, help="Path to input PyTorch model (.pth, .pt or .ckpt)")
     parser.add_argument("--output_model", type=str, help="Path to output safetensors model (.safetensors)")
     parser.add_argument("--precision", type=str, choices=["fp32", "fp16", "bf16"], default="fp32",
                         help="Precision to convert model to (fp32, fp16, or bf16)")
@@ -19,8 +19,21 @@ def convert_model(input_path, output_path, precision):
     print(f"Using device: {device}")
     
     print(f"Loading model from {input_path}...")
+
+    # >> Check file extension to determine format
+    _, ext = os.path.splitext(input_path)
+    # >> Add warning for unexpected file extensions
+    if ext.lower() not in ['.pth', '.pt', '.ckpt']:
+        print(f"Warning: Input file extension '{ext}' is not a common PyTorch format (.pth, .pt, .ckpt)")
+        print("Attempting to load anyway...")
+
     state_dict = torch.load(input_path, map_location=device)
     
+    # >> Add handling for checkpoint files that wrap state_dict
+    if "state_dict" in state_dict:
+        print("Detected checkpoint format with wrapped state_dict")
+        state_dict = state_dict["state_dict"]
+
     print(f"Converting to {precision}...")
     for key in state_dict:
         if isinstance(state_dict[key], torch.Tensor):
