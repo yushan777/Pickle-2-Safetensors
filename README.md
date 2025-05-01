@@ -1,4 +1,4 @@
-# Pth-2-Safetensors
+# Pickle-2-Safetensors
 A script to convert PyTorch model (.pth, .pt, ckpt) to safetensors format.
 
 Installation
