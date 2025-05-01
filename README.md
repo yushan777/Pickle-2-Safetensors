@@ -15,7 +15,7 @@ python -m venv venv
 source venv/bin/activate
 
 # For Windows
-venv\Scripts\activate.bat 
+# venv\Scripts\activate.bat 
 
 # Install a couple of dependencies
 pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu126
