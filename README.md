@@ -18,8 +18,9 @@ source venv/bin/activate
 # venv\Scripts\activate.bat 
 
 # Install a couple of dependencies
-pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu126
-pip install safetensors
+# pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu126
+pip install torch==2.7.0+cu126 torchvision==0.22.0+cu126 --extra-index-url https://download.pytorch.org/whl/cu126
+pip install safetensors>=0.5.3
 ```
 
 Usage
