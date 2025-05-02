@@ -27,14 +27,14 @@ pip install safetensors>=0.5.3
 Usage
 ```
 # Defaults to fp32
-python3 convert_model.py --input_model model.pth
+python3 convert.py --input_model model.pth
 
 # Specify output path
-python3 convert_model.py --input_model model.pth --output_model converted_model.safetensors
+python3 convert.py --input_model model.pth --output_model converted_model.safetensors
 
 # Convert to half precision (fp16)
-python3 convert_model.py --input_model model.pth --precision fp16
+python3 convert.py --input_model model.pth --precision fp16
 
 # Convert to bfloat16 precision
-python3 convert_model.py --input_model model.pth --precision bf16
+python3 convert.py --input_model model.pth --precision bf16
 ```
